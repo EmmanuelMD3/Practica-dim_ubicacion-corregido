@@ -1,0 +1,25 @@
+hora_24,hora_completa,seguimiento_hora,indicador_hora,descripcion_hora
+1,100,Madrugada,AM,01:00 de la madrugada
+2,200,Madrugada,AM,02:00 de la madrugada
+3,300,Madrugada,AM,03:00 de la madrugada
+4,400,Madrugada,AM,04:00 de la madrugada
+5,500,Madrugada,AM,05:00 de la madrugada
+6,600,Mañana,AM,06:00 de la mañana
+7,700,Mañana,AM,07:00 de la mañana
+8,800,Mañana,AM,08:00 de la mañana
+9,900,Mañana,AM,09:00 de la mañana
+10,1000,Mañana,AM,10:00 de la mañana
+11,1100,Mañana,AM,11:00 de la mañana
+12,1200,Tarde,PM,12:00 del mediodía
+13,1300,Tarde,PM,01:00 de la tarde
+14,1400,Tarde,PM,02:00 de la tarde
+15,1500,Tarde,PM,03:00 de la tarde
+16,1600,Tarde,PM,04:00 de la tarde
+17,1700,Tarde,PM,05:00 de la tarde
+18,1800,Noche,PM,06:00 de la noche
+19,1900,Noche,PM,07:00 de la noche
+20,2000,Noche,PM,08:00 de la noche
+21,2100,Noche,PM,09:00 de la noche
+22,2200,Noche,PM,10:00 de la noche
+23,2300,Noche,PM,11:00 de la noche
+24,2400,Noche,PM,12:00 de la noche

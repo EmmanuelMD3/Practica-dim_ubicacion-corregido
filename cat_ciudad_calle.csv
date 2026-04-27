@@ -1,0 +1,226 @@
+Estado,Ciudad,Calle
+15,10,Vía Morelos
+15,10,Avenida Central
+15,10,Calle Cuauhtémoc
+15,10,Avenida México
+15,10,Calle Benito Juárez
+15,37,Paseo Tollocan
+15,37,Avenida Independencia
+15,37,Calle Nicolás Bravo
+15,37,Calle Hidalgo
+15,37,Avenida Morelos
+15,22,Avenida Bordo de Xochiaca
+15,22,Calle Nezahualcóyotl
+15,22,Avenida Pantitlán
+15,22,Calle José López Portillo
+15,22,Calle Vicente Villada
+14,12,Avenida Vallarta
+14,12,Calle Pedro Moreno
+14,12,Avenida Chapultepec
+14,12,Calle Juárez
+14,12,Calle 16 de Septiembre
+14,44,Avenida Patria
+14,44,Avenida Guadalupe
+14,44,Calle Miguel Hidalgo
+14,44,Avenida Tepeyac
+14,44,Calle Morelos
+14,36,Calle Independencia
+14,36,Avenida Juárez
+14,36,Calle Reforma
+14,36,Calle 5 de Mayo
+14,36,Avenida México
+30,41,Avenida Independencia
+30,41,Calle Miguel Lerdo
+30,41,Avenida Salvador Díaz Mirón
+30,41,Calle 5 de Mayo
+30,41,Avenida 16 de Septiembre
+30,42,Calle Enríquez
+30,42,Avenida Lázaro Cárdenas
+30,42,Calle Benito Juárez
+30,42,Calle Manuel Ávila Camacho
+30,42,Avenida 20 de Noviembre
+30,7,Avenida Universidad
+30,7,Calle Belisario Domínguez
+30,7,Avenida Malecón
+30,7,Calle Miguel Hidalgo
+30,7,Avenida Ignacio de la Llave
+21,25,Calle 16 de Septiembre
+21,25,Avenida Juárez
+21,25,Calle 5 de Mayo
+21,25,Avenida Reforma
+21,25,Calle Morelos
+21,34,Calle 2 Oriente
+21,34,Avenida Benito Juárez
+21,34,Calle Miguel Hidalgo
+21,34,Avenida Independencia
+21,34,Calle 5 de Mayo
+21,30,Calle Juárez
+21,30,Avenida Morelos
+21,30,Calle Hidalgo
+21,30,Avenida 16 de Septiembre
+21,30,Calle Zaragoza
+11,15,Calle Madero
+11,15,Avenida José María Morelos
+11,15,Calle 5 de Mayo
+11,15,Avenida Miguel Hidalgo
+11,15,Calle Benito Juárez
+11,14,Calle Alonso
+11,14,Calle Sopeña
+11,14,Calle Miguel Hidalgo
+11,14,Calle Positos
+11,14,Calle Cantarranas
+11,2,Avenida Madero
+11,2,Calle Benito Juárez
+11,2,Avenida 16 de Septiembre
+11,2,Calle Miguel Hidalgo
+11,2,Avenida José María Morelos
+19,20,Calle Morelos
+19,20,Avenida Benito Juárez
+19,20,Calle 5 de Mayo
+19,20,Avenida Hidalgo
+19,20,Calle Miguel Alemán
+19,13,Avenida Miguel Alemán
+19,13,Calle Lázaro Cárdenas
+19,13,Avenida Benito Juárez
+19,13,Calle Morelos
+19,13,Avenida Ruiz Cortines
+19,31,Avenida Universidad
+19,31,Calle 5 de Mayo
+19,31,Avenida Hidalgo
+19,31,Calle Benito Juárez
+19,31,Avenida Morelos
+5,39,Calle Central
+5,39,Avenida 1a. Norte
+5,39,Calle Benito Juárez
+5,39,Avenida 2a. Sur
+5,39,Calle Miguel Hidalgo
+5,29,Calle Real de Guadalupe
+5,29,Calle Diego de Mazariegos
+5,29,Calle Francisco I. Madero
+5,29,Calle Insurgentes
+5,29,Calle Benito Juárez
+5,33,Calle Central
+5,33,Avenida 8a. Norte
+5,33,Calle Miguel Hidalgo
+5,33,Avenida Benito Juárez
+5,33,Calle 4a. Oriente
+16,21,Calle Francisco I. Madero
+16,21,Avenida Benito Juárez
+16,21,Calle Miguel Hidalgo
+16,21,Calle Vasco de Quiroga
+16,21,Avenida Acueducto
+16,40,Calle Benito Juárez
+16,40,Avenida Lázaro Cárdenas
+16,40,Calle 5 de Mayo
+16,40,Calle Francisco I. Madero
+16,40,Avenida 20 de Noviembre
+16,43,Calle Benito Juárez
+16,43,Avenida Madero
+16,43,Calle Hidalgo
+16,43,Avenida 5 de Mayo
+16,43,Calle Morelos
+20,24,Calle Macedonio Alcalá
+20,24,Calle García Vigil
+20,24,Calle Benito Juárez
+20,24,Calle Hidalgo
+20,24,Calle 20 de Noviembre
+20,32,Calle Benito Juárez
+20,32,Avenida Morelos
+20,32,Calle Hidalgo
+20,32,Avenida Independencia
+20,32,Calle 16 de Septiembre
+20,27,Avenida del Mar
+20,27,Calle Benito Juárez
+20,27,Calle Hidalgo
+20,27,Avenida Morelos
+20,27,Calle 5 de Mayo
+2,35,Avenida Revolución
+2,35,Calle 2da
+2,35,Paseo de los Héroes
+2,35,Avenida Miguel Alemán
+2,35,Calle 7ma
+2,18,Calle Francisco I. Madero
+2,18,Avenida Reforma
+2,18,Calle Benito Juárez
+2,18,Avenida Lázaro Cárdenas
+2,18,Calle 5 de Mayo
+2,11,Calle Primera
+2,11,Avenida Ruiz Cortines
+2,11,Calle Benito Juárez
+2,11,Avenida López Mateos
+2,11,Calle 5 de Febrero
+6,3,Calle Libertad
+6,3,Avenida Benito Juárez
+6,3,Calle 5 de Mayo
+6,3,Avenida Independencia
+6,3,Calle Miguel Hidalgo
+6,5,Avenida 16 de Septiembre
+6,5,Calle Vicente Guerrero
+6,5,Avenida Benito Juárez
+6,5,Calle Mariscal
+6,5,Avenida Francisco Villa
+6,9,Avenida 1a. Poniente
+6,9,Calle 5 de Mayo
+6,9,Avenida Benito Juárez
+6,9,Calle 16 de Septiembre
+6,9,Avenida Miguel Hidalgo
+12,1,Avenida Costera Miguel Alemán
+12,1,Calle La Quebrada
+12,1,Avenida Benito Juárez
+12,1,Calle 5 de Mayo
+12,1,Avenida Cuauhtémoc
+12,4,Calle Benito Juárez
+12,4,Avenida Lázaro Cárdenas
+12,4,Calle Miguel Hidalgo
+12,4,Avenida 5 de Mayo
+12,4,Calle Francisco I. Madero
+12,45,Avenida José María Morelos
+12,45,Calle Benito Juárez
+12,45,Paseo del Pescador
+12,45,Calle Cuauhtémoc
+12,45,Avenida Lázaro Cárdenas
+28,26,Calle Benito Juárez
+28,26,Avenida Miguel Hidalgo
+28,26,Calle Francisco I. Madero
+28,26,Avenida 5 de Mayo
+28,26,Calle Morelos
+28,6,Calle 5 de Mayo
+28,6,Avenida Benito Juárez
+28,6,Calle Miguel Hidalgo
+28,6,Avenida Francisco I. Madero
+28,6,Calle 15
+28,23,Avenida Benito Juárez
+28,23,Calle Miguel Hidalgo
+28,23,Avenida Francisco I. Madero
+28,23,Calle 5 de Mayo
+28,23,Avenida Guerrero
+8,28,Calle Benito Juárez
+8,28,Avenida Miguel Hidalgo
+8,28,Calle Francisco I. Madero
+8,28,Avenida 5 de Mayo
+8,28,Calle Morelos
+8,38,Calle Juárez
+8,38,Avenida Miguel Hidalgo
+8,38,Calle 5 de Mayo
+8,38,Avenida Morelos
+8,38,Calle Francisco I. Madero
+8,19,Calle Benito Juárez
+8,19,Avenida 5 de Mayo
+8,19,Calle Miguel Hidalgo
+8,19,Avenida Francisco I. Madero
+8,19,Calle Morelos
+25,8,Calle Benito Juárez
+25,8,Avenida Miguel Hidalgo
+25,8,Calle Francisco I. Madero
+25,8,Avenida 5 de Mayo
+25,8,Calle Morelos
+25,17,Avenida del Mar
+25,17,Calle Benito Juárez
+25,17,Paseo Claussen
+25,17,Calle Miguel Hidalgo
+25,17,Avenida Olas Altas
+25,16,Calle Benito Juárez
+25,16,Avenida Miguel Hidalgo
+25,16,Calle Francisco I. Madero
+25,16,Avenida 5 de Mayo
+25,16,Calle Morelos
