@@ -21,18 +21,75 @@
   </notepads>
   <order>
     <hop>
-      <from>MongoDB input</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values</from>
       <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Clientes</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>JavaScript</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Contrato</from>
+      <to>Unique rows (HashSet)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows (HashSet)</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>JavaScript</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>Dummy (do nothing)</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <transform>
-    <name>MongoDB input</name>
+    <name>Execute SQL script</name>
+    <type>ExecSql</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <arguments>
+</arguments>
+    <connection>CON</connection>
+    <execute_each_row>N</execute_each_row>
+    <quoteString>N</quoteString>
+    <replace_variables>N</replace_variables>
+    <set_params>N</set_params>
+    <single_statement>N</single_statement>
+    <sql>DELETE FROM dim_cliente;
+ALTER SEQUENCE dim_cliente_id_cliente_seq RESTART WITH 1;</sql>
+    <attributes/>
+    <GUI>
+      <xloc>48</xloc>
+      <yloc>32</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Clientes</name>
     <type>MongoDbInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -99,17 +156,17 @@
         <length>-2</length>
         <name>numero_cliente</name>
         <precision>-2</precision>
-        <rename>numero_cliente</rename>
+        <rename/>
       </field>
       <field>
         <length>-2</length>
-        <name>segmento_cliente</name>
+        <name>segmento_limpio</name>
         <precision>-2</precision>
         <rename>segmento_cliente</rename>
       </field>
       <field>
         <length>-2</length>
-        <name>regimen_fiscal</name>
+        <name>regimen_fiscal_limpio</name>
         <precision>-2</precision>
         <rename>regimen_fiscal_cliente</rename>
       </field>
@@ -123,14 +180,104 @@
         <length>-2</length>
         <name>nombre_cliente</name>
         <precision>-2</precision>
-        <rename>nombre_cliente</rename>
+        <rename/>
       </field>
+      <meta>
+        <conversion_mask/>
+        <currency_symbol/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <decimal_symbol/>
+        <encoding/>
+        <grouping_symbol/>
+        <length>20</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>numero_cliente</name>
+        <precision>-2</precision>
+        <rename>numero_cliente</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <conversion_mask/>
+        <currency_symbol/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <decimal_symbol/>
+        <encoding/>
+        <grouping_symbol/>
+        <length>70</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>segmento_cliente</name>
+        <precision>-2</precision>
+        <rename>segmento_cliente</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <conversion_mask/>
+        <currency_symbol/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <decimal_symbol/>
+        <encoding/>
+        <grouping_symbol/>
+        <length>18</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>regimen_fiscal_cliente</name>
+        <precision>-2</precision>
+        <rename>regimen_fiscal_cliente</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <conversion_mask/>
+        <currency_symbol/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <decimal_symbol/>
+        <encoding/>
+        <grouping_symbol/>
+        <length>18</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>curp_cliente</name>
+        <precision>-2</precision>
+        <rename>curp_cliente</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <conversion_mask/>
+        <currency_symbol/>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <decimal_symbol/>
+        <encoding/>
+        <grouping_symbol/>
+        <length>150</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>nombre_cliente</name>
+        <precision>-2</precision>
+        <rename>nombre_cliente</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
       <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>96</yloc>
+      <xloc>528</xloc>
+      <yloc>112</yloc>
     </GUI>
   </transform>
   <transform>
@@ -191,8 +338,206 @@
     <use_batch>Y</use_batch>
     <attributes/>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>640</xloc>
       <yloc>112</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Stream lookup</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>Unique rows (HashSet)</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>numero_cliente</name>
+        <field>numero_cliente_contrato</field>
+      </key>
+      <value>
+        <name>numero_cliente_contrato</name>
+        <rename>cliente_con_contrato</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>112</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Contrato</name>
+    <type>MongoDbInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <collection>contrato</collection>
+    <connection>CON_MONGO</connection>
+    <execute_for_each_row>N</execute_for_each_row>
+    <fields_name/>
+    <json_field_name>json</json_field_name>
+    <json_query>{}</json_query>
+    <mongo_fields>
+      <mongo_field>
+        <field_name>numero_cliente_contrato</field_name>
+        <field_path>numero_cliente</field_path>
+        <field_type>String</field_type>
+      </mongo_field>
+    </mongo_fields>
+    <output_json>N</output_json>
+    <query_is_pipeline>N</query_is_pipeline>
+    <attributes/>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>208</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>IS NOT NULL</function>
+        <leftvalue>cliente_con_contrato</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_false_to>Dummy (do nothing)</send_false_to>
+    <send_true_to>JavaScript</send_true_to>
+    <attributes/>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>112</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>JavaScript</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>// Limpiar segmento_cliente
+var segmento_limpio = segmento_cliente;
+
+if (segmento_limpio != null &amp;&amp; segmento_limpio != "") {
+    segmento_limpio = segmento_limpio.replace(/-/g, " ");
+    segmento_limpio = segmento_limpio.toLowerCase();
+    segmento_limpio = segmento_limpio.charAt(0).toUpperCase() + segmento_limpio.slice(1);
+}
+
+// Limpiar regimen_fiscal
+var regimen_fiscal_limpio = regimen_fiscal;
+
+if (regimen_fiscal_limpio != null &amp;&amp; regimen_fiscal_limpio != "") {
+    regimen_fiscal_limpio = regimen_fiscal_limpio.replace(/_/g, " ");
+    regimen_fiscal_limpio = regimen_fiscal_limpio.replace(/-/g, " ");
+    regimen_fiscal_limpio = regimen_fiscal_limpio.toLowerCase();
+    regimen_fiscal_limpio = regimen_fiscal_limpio.charAt(0).toUpperCase() + regimen_fiscal_limpio.slice(1);
+}
+</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>segmento_limpio</name>
+        <rename>segmento_limpio</rename>
+        <type>String</type>
+        <length>70</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>regimen_fiscal_limpio</name>
+        <rename>regimen_fiscal_limpio</rename>
+        <type>String</type>
+        <length>18</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>112</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique rows (HashSet)</name>
+    <type>UniqueRowsByHashSet</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <store_values>Y</store_values>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>numero_cliente_contrato</name>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>208</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>208</yloc>
     </GUI>
   </transform>
   <transform_error_handling>

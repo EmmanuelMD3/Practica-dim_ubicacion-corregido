@@ -37,6 +37,149 @@
     </hop>
   </order>
   <transform>
+    <name>Execute SQL script</name>
+    <type>ExecSql</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <arguments>
+</arguments>
+    <connection>CON</connection>
+    <execute_each_row>N</execute_each_row>
+    <quoteString>N</quoteString>
+    <replace_variables>N</replace_variables>
+    <set_params>N</set_params>
+    <single_statement>N</single_statement>
+    <sql>DELETE FROM dim_contrato;
+ALTER SEQUENCE dim_contrato_id_contrato_seq RESTART WITH 1;</sql>
+    <attributes/>
+    <GUI>
+      <xloc>80</xloc>
+      <yloc>160</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>JavaScript</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>// Número de contrato sin agregar -000
+var numero_contrato_final = numero_contrato;
+
+// Cambiar fecha de inicio para clientes específicos
+var inicio_contrato_final = inicio_contrato;
+
+if (numero_cliente == "DEF2345678" || numero_cliente == "MNO5678901") {
+    inicio_contrato_final = "2017-01-17";
+}
+
+// Limpiar canal_contrato
+var canal_contrato_final = canal_contrato;
+
+if (canal_contrato_final != null &amp;&amp; canal_contrato_final != "") {
+    canal_contrato_final = canal_contrato_final.replace(/_/g, " ");
+    canal_contrato_final = canal_contrato_final.replace(/-/g, " ");
+    canal_contrato_final = canal_contrato_final.toLowerCase();
+    canal_contrato_final = canal_contrato_final.charAt(0).toUpperCase() + canal_contrato_final.slice(1);
+}
+
+// Pasar los demás campos
+var estado_contrato_final = estado_contrato;
+var ciudad_contrato_final = ciudad_contrato;
+var sucursal_contrato_final = sucursal_contrato;
+var fin_contrato_final = fin_contrato;
+var motivo_fin_contrato_final = motivo_fin_contrato;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>numero_contrato_final</name>
+        <rename>numero_contrato_final</rename>
+        <type>String</type>
+        <length>50</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>inicio_contrato_final</name>
+        <rename>inicio_contrato_final</rename>
+        <type>String</type>
+        <length>20</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>estado_contrato_final</name>
+        <rename>estado_contrato_final</rename>
+        <type>String</type>
+        <length>50</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>ciudad_contrato_final</name>
+        <rename>ciudad_contrato_final</rename>
+        <type>String</type>
+        <length>50</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>sucursal_contrato_final</name>
+        <rename>sucursal_contrato_final</rename>
+        <type>String</type>
+        <length>150</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>canal_contrato_final</name>
+        <rename>canal_contrato_final</rename>
+        <type>String</type>
+        <length>20</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>fin_contrato_final</name>
+        <rename>fin_contrato_final</rename>
+        <type>String</type>
+        <length>20</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>motivo_fin_contrato_final</name>
+        <rename>motivo_fin_contrato_final</rename>
+        <type>String</type>
+        <length>80</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>80</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>MongoDB input</name>
     <type>MongoDbInput</type>
     <description/>
@@ -50,6 +193,7 @@
     <collection>contrato</collection>
     <connection>CON_MONGO</connection>
     <execute_for_each_row>N</execute_for_each_row>
+    <fields_name/>
     <json_field_name>json</json_field_name>
     <json_query>{}</json_query>
     <mongo_fields>
@@ -248,7 +392,7 @@
         <decimal_symbol/>
         <encoding/>
         <grouping_symbol/>
-        <length>30</length>
+        <length>50</length>
         <lenient_string_to_number>N</lenient_string_to_number>
         <name>canal_contrato</name>
         <precision>-2</precision>
@@ -315,7 +459,7 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>368</xloc>
+      <xloc>352</xloc>
       <yloc>80</yloc>
     </GUI>
   </transform>
@@ -390,115 +534,6 @@
     <attributes/>
     <GUI>
       <xloc>496</xloc>
-      <yloc>80</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>JavaScript</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var numero_contrato_final = numero_contrato;
-
-if (numero_contrato_final.indexOf("-000") == -1) {
-    numero_contrato_final = numero_contrato_final + "-000";
-}
-
-var inicio_contrato_final = inicio_contrato;
-
-if (numero_cliente == "DEF2345678" || numero_cliente == "MNO5678901") {
-    inicio_contrato_final = "2017-01-17";
-}
-
-var estado_contrato_final = estado_contrato;
-var ciudad_contrato_final = ciudad_contrato;
-var sucursal_contrato_final = sucursal_contrato;
-var canal_contrato_final = canal_contrato;
-var fin_contrato_final = fin_contrato;
-var motivo_fin_contrato_final = motivo_fin_contrato;
-</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>numero_contrato_final</name>
-        <rename>numero_contrato_final</rename>
-        <type>String</type>
-        <length>50</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>inicio_contrato_final</name>
-        <rename>inicio_contrato_final</rename>
-        <type>String</type>
-        <length>20</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>estado_contrato_final</name>
-        <rename>estado_contrato_final</rename>
-        <type>String</type>
-        <length>50</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>ciudad_contrato_final</name>
-        <rename>ciudad_contrato_final</rename>
-        <type>String</type>
-        <length>50</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>sucursal_contrato_final</name>
-        <rename>sucursal_contrato_final</rename>
-        <type>String</type>
-        <length>150</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>canal_contrato_final</name>
-        <rename>canal_contrato_final</rename>
-        <type>String</type>
-        <length>20</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>fin_contrato_final</name>
-        <rename>fin_contrato_final</rename>
-        <type>String</type>
-        <length>20</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>motivo_fin_contrato_final</name>
-        <rename>motivo_fin_contrato_final</rename>
-        <type>String</type>
-        <length>80</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-    </fields>
-    <attributes/>
-    <GUI>
-      <xloc>224</xloc>
       <yloc>80</yloc>
     </GUI>
   </transform>
